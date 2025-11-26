@@ -447,14 +447,3 @@ Each draft includes:
 ***
 
 Made with ❤️ for AI-powered, **prompt-driven** email productivity.
-
-[1](https://github.com/Nidhish-Balasubramanya/Intelligent-Email-Assistant)
-[2](https://aws.amazon.com/blogs/machine-learning/automate-emails-for-task-management-using-amazon-bedrock-agents-amazon-bedrock-knowledge-bases-and-amazon-bedrock-guardrails/)
-[3](https://research.aimultiple.com/personal-ai-agents/)
-[4](https://codelabs.developers.google.com/getting-started-google-antigravity)
-[5](https://docsbot.ai/prompts/productivity/email-ai-agent)
-[6](https://www.linkedin.com/posts/ydeepakb_ai-emailautomation-streamlit-activity-7365881704009396224-4144)
-[7](https://support.templafy.com/hc/en-us/articles/21500154973341-AI-Assistant-Prompt-Template-Examples)
-[8](https://cloud.google.com/gemini-enterprise/resources/prompt-guide)
-[9](https://www.youtube.com/watch?v=kBLidGJtI6s)
-[10](https://www.youtube.com/watch?v=1A79eYjiBvo)
