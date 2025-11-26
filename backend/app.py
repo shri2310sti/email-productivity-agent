@@ -370,6 +370,18 @@ def reset_prompts():
         })
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/healthz', methods=['GET'])
+@app.route('/health', methods=['GET'])
+def health_check_render():
+    """Health check for Render"""
+    return jsonify({
+        'status': 'healthy',
+        'service': 'Email Productivity Agent',
+        'version': '1.0.0'
+    }), 200
+    
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5001))
     print("=" * 50)
