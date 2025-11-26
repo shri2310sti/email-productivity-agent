@@ -15,16 +15,16 @@
       "category": "Important",
       "actionItems": [
         {
-          "task": "Finalize the Q4 report",
-          "deadline": "Friday, November 29th"
+          "task": "Review the attached document",
+          "deadline": "EOD Wednesday"
         },
         {
-          "task": "Review the attached document and send feedback",
+          "task": "Send feedback to John",
           "deadline": "EOD Wednesday"
         },
         {
           "task": "Provide the latest sales figures for the presentation",
-          "deadline": ""
+          "deadline": null
         }
       ]
     },
@@ -55,8 +55,8 @@
       "category": "Important",
       "actionItems": [
         {
-          "task": "Let Sarah know your availability and preferred time for a meeting next week (Tuesday or Wednesday afternoon).",
-          "deadline": "next week"
+          "task": "Let Sarah know your availability and preferred time for a meeting next week",
+          "deadline": ""
         }
       ]
     },
@@ -66,7 +66,7 @@
       "subject": "Code Review Request - PR #234",
       "body": "Hey,\n\nI just pushed PR #234 with the new authentication module. Could you review it when you get a chance?\n\nIt needs to be merged before the sprint ends on Friday.\n\nThanks!\nMichael",
       "timestamp": "2025-11-25T14:00:00",
-      "category": "To-Do",
+      "category": "Important",
       "actionItems": [
         {
           "task": "Review PR #234 (new authentication module)",
@@ -80,7 +80,7 @@
       "subject": "Action Required: Complete Annual Training",
       "body": "Dear Employee,\n\nThis is a reminder to complete your mandatory annual compliance training by November 30th.\n\nThe course takes approximately 2 hours to complete. Failure to complete may result in access restrictions.\n\nPlease log in to the training portal and complete all modules.\n\nHR Department",
       "timestamp": "2025-11-24T16:30:00",
-      "category": "To-Do",
+      "category": "Important",
       "actionItems": [
         {
           "task": "Complete mandatory annual compliance training",
@@ -103,8 +103,17 @@
       "subject": "Urgent: Bug in Production",
       "body": "URGENT\n\nWe're experiencing a critical bug in production affecting user logins.\n\nCan you investigate ASAP? Users are reporting '500 Internal Server Error' when trying to authenticate.\n\nThis is affecting approximately 1000 users.\n\nPlease respond immediately.\n\nDavid",
       "timestamp": "2025-11-25T15:45:00",
-      "category": "Uncategorized",
-      "actionItems": []
+      "category": "Important",
+      "actionItems": [
+        {
+          "task": "Investigate critical bug in production affecting user logins (500 Internal Server Error)",
+          "deadline": "ASAP"
+        },
+        {
+          "task": "Respond",
+          "deadline": "immediately"
+        }
+      ]
     },
     {
       "id": "mock_9",
@@ -124,7 +133,7 @@
       "category": "Important",
       "actionItems": [
         {
-          "task": "Check availability for a call to discuss partnership opportunity",
+          "task": "Respond with availability for a call",
           "deadline": "next week"
         }
       ]
@@ -138,8 +147,8 @@
       "category": "Important",
       "actionItems": [
         {
-          "task": "Update lodash to version 4.17.21 or higher in the 'email-agent' repository.",
-          "deadline": ""
+          "task": "Update lodash to version 4.17.21 or higher in repository 'email-agent'",
+          "deadline": null
         }
       ]
     },
@@ -196,12 +205,7 @@
       "body": "Hi,\n\nI came across your profile and think you'd be a great fit for a Senior Software Engineer role at our company.\n\nThe position offers:\n- Competitive salary ($150k-$200k)\n- Remote work options\n- Excellent benefits\n- Stock options\n- Work on cutting-edge technology\n\nAre you open to discussing opportunities?\n\nBest regards,\nTech Recruiter",
       "timestamp": "2025-11-22T10:30:00",
       "category": "Important",
-      "actionItems": [
-        {
-          "task": "Respond to the recruiter regarding openness to discuss opportunities",
-          "deadline": null
-        }
-      ]
+      "actionItems": []
     },
     {
       "id": "mock_17",
@@ -212,11 +216,7 @@
       "category": "Important",
       "actionItems": [
         {
-          "task": "Review the attached Non-Disclosure Agreement",
-          "deadline": "November 27th"
-        },
-        {
-          "task": "Approve and sign the NDA",
+          "task": "Review, approve, and sign the attached Non-Disclosure Agreement",
           "deadline": "November 27th"
         }
       ]
@@ -236,10 +236,10 @@
       "subject": "Feature Request: Dark Mode",
       "body": "Hi Team,\n\nLove your product! Using it daily.\n\nOne feature request: could you add a dark mode option?\n\nMany users including myself prefer dark themes, especially for late-night work sessions.\n\nIt would really improve the user experience.\n\nThanks for considering!\n\nRobert",
       "timestamp": "2025-11-23T19:45:00",
-      "category": "To-Do",
+      "category": "Important",
       "actionItems": [
         {
-          "task": "Add a dark mode option to the product",
+          "task": "Add a dark mode option",
           "deadline": null
         }
       ]
