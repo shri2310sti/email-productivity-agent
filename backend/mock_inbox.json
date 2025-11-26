@@ -1,0 +1,182 @@
+[
+    {
+        "id": "mock_1",
+        "from": "john.smith@techcorp.com",
+        "subject": "Q4 Project Deadline - Action Required",
+        "body": "Hi Team,\n\nWe need to finalize the Q4 report by Friday, November 29th. Please review the attached document and send me your feedback by EOD Wednesday.\n\nAlso, can you provide the latest sales figures for the presentation?\n\nThanks,\nJohn",
+        "timestamp": "2025-11-25T10:30:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_2",
+        "from": "newsletter@techdigest.com",
+        "subject": "Weekly Tech Digest - AI Trends & Updates",
+        "body": "Welcome to this week's Tech Digest!\n\nCheck out the latest AI developments, new framework releases, and trending open-source projects.\n\nThis week:\n- GPT-5 rumors\n- Rust adoption grows\n- Quantum computing breakthroughs\n\nRead more at techdigest.com",
+        "timestamp": "2025-11-25T09:15:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_3",
+        "from": "spam.bot@randomsite.xyz",
+        "subject": "YOU WON $1,000,000!!! CLAIM NOW!!!",
+        "body": "Congratulations! You have been selected as our lucky winner!\n\nClick here to claim your prize now! Limited time offer! Act fast!\n\nThis is not a scam! 100% real! Send us your bank details!\n\nWinners Team",
+        "timestamp": "2025-11-25T08:45:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_4",
+        "from": "sarah.johnson@company.com",
+        "subject": "Meeting Request: Strategy Discussion",
+        "body": "Hi,\n\nI would like to schedule a meeting next week to discuss our Q1 2026 strategy.\n\nAre you available Tuesday or Wednesday afternoon? Please let me know your availability and preferred time.\n\nBest regards,\nSarah",
+        "timestamp": "2025-11-25T11:20:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_5",
+        "from": "michael.chen@startup.io",
+        "subject": "Code Review Request - PR #234",
+        "body": "Hey,\n\nI just pushed PR #234 with the new authentication module. Could you review it when you get a chance?\n\nIt needs to be merged before the sprint ends on Friday.\n\nThanks!\nMichael",
+        "timestamp": "2025-11-25T14:00:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_6",
+        "from": "hr@company.com",
+        "subject": "Action Required: Complete Annual Training",
+        "body": "Dear Employee,\n\nThis is a reminder to complete your mandatory annual compliance training by November 30th.\n\nThe course takes approximately 2 hours to complete. Failure to complete may result in access restrictions.\n\nPlease log in to the training portal and complete all modules.\n\nHR Department",
+        "timestamp": "2025-11-24T16:30:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_7",
+        "from": "deals@shopping.com",
+        "subject": "Black Friday Deals - 70% OFF Everything!",
+        "body": "Don't miss our biggest sale of the year!\n\nUp to 70% off on:\n- Electronics\n- Clothing\n- Home goods\n- And more!\n\nFree shipping on orders over $50. Sale ends midnight Sunday!\n\nShop now at shopping.com",
+        "timestamp": "2025-11-24T12:00:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_8",
+        "from": "david.park@client.com",
+        "subject": "Urgent: Bug in Production",
+        "body": "URGENT\n\nWe're experiencing a critical bug in production affecting user logins.\n\nCan you investigate ASAP? Users are reporting '500 Internal Server Error' when trying to authenticate.\n\nThis is affecting approximately 1000 users.\n\nPlease respond immediately.\n\nDavid",
+        "timestamp": "2025-11-25T15:45:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_9",
+        "from": "events@conference.org",
+        "subject": "DevCon 2026 - Early Bird Registration",
+        "body": "DevCon 2026 is coming to San Francisco next March!\n\nEarly bird tickets are now available at 40% off.\n\nJoin 5000+ developers for:\n- 3 days of workshops\n- Industry expert talks\n- Networking opportunities\n- Hands-on labs\n\nRegister now at devcon2026.com",
+        "timestamp": "2025-11-24T10:00:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_10",
+        "from": "emily.rodriguez@partner.com",
+        "subject": "Partnership Proposal Discussion",
+        "body": "Hi,\n\nI hope this email finds you well.\n\nWe'd like to explore a potential partnership between our companies. We believe there's great synergy in our technologies.\n\nWould you be available for a call next week to discuss this opportunity?\n\nLooking forward to hearing from you.\n\nBest,\nEmily",
+        "timestamp": "2025-11-24T14:30:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_11",
+        "from": "noreply@github.com",
+        "subject": "[GitHub] Security Alert: New vulnerability detected",
+        "body": "Security Alert\n\nA new security vulnerability has been detected in your repository 'email-agent'.\n\nDependency: lodash@4.17.20\nSeverity: High\nRecommended Action: Update to lodash@4.17.21 or higher\n\nView details on GitHub",
+        "timestamp": "2025-11-25T07:00:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_12",
+        "from": "lisa.wong@finance.com",
+        "subject": "Invoice #INV-2025-1142 - Payment Due",
+        "body": "Dear Sir/Madam,\n\nThis is a friendly reminder that Invoice #INV-2025-1142 for $2,450 is due on November 28th.\n\nPlease process payment at your earliest convenience to avoid late fees.\n\nPayment details:\n- Amount: $2,450.00\n- Due Date: November 28, 2025\n- Invoice ID: INV-2025-1142\n\nThank you,\nAccounts Receivable",
+        "timestamp": "2025-11-23T11:00:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_13",
+        "from": "team@slack.com",
+        "subject": "Your Slack Workspace Weekly Summary",
+        "body": "Here's what happened in your workspace this week:\n\n- 234 messages sent\n- 12 new channels created\n- 45 files shared\n- Most active channel: #engineering\n- Most active day: Wednesday\n\nKeep the collaboration going!\n\nSlack Team",
+        "timestamp": "2025-11-24T09:00:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_14",
+        "from": "alex.kumar@vendor.com",
+        "subject": "Contract Renewal - Signature Required",
+        "body": "Hello,\n\nYour annual software license agreement expires on December 15th.\n\nPlease review the attached renewal contract and return the signed copy by December 1st to ensure uninterrupted service.\n\nKey changes:\n- Updated pricing (5% increase)\n- New support tiers available\n- Extended warranty options\n\nLet me know if you have questions.\n\nAlex",
+        "timestamp": "2025-11-23T13:20:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_15",
+        "from": "support@cloudservice.com",
+        "subject": "Scheduled Maintenance Notification",
+        "body": "Maintenance Notification\n\nWe will be performing scheduled maintenance on Saturday, November 30th from 2:00 AM to 6:00 AM EST.\n\nServices may be unavailable during this time:\n- Web Dashboard\n- API Services\n- Mobile Apps\n\nWe apologize for any inconvenience.\n\nSupport Team",
+        "timestamp": "2025-11-22T16:00:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_16",
+        "from": "recruiter@bigtech.com",
+        "subject": "Senior Software Engineer Position",
+        "body": "Hi,\n\nI came across your profile and think you'd be a great fit for a Senior Software Engineer role at our company.\n\nThe position offers:\n- Competitive salary ($150k-$200k)\n- Remote work options\n- Excellent benefits\n- Stock options\n- Work on cutting-edge technology\n\nAre you open to discussing opportunities?\n\nBest regards,\nTech Recruiter",
+        "timestamp": "2025-11-22T10:30:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_17",
+        "from": "maria.santos@legal.com",
+        "subject": "NDA Review Required",
+        "body": "Hello,\n\nPlease review the attached Non-Disclosure Agreement for the upcoming client project.\n\nWe need your approval and signature by November 27th before we can proceed with the engagement.\n\nThe NDA covers:\n- Confidential information protection\n- Term: 2 years\n- Standard non-compete clause\n\nPlease let me know if you have any concerns.\n\nMaria Santos\nLegal Department",
+        "timestamp": "2025-11-23T15:00:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_18",
+        "from": "updates@linkedin.com",
+        "subject": "Your weekly LinkedIn job alerts",
+        "body": "Based on your profile and preferences, here are new job opportunities:\n\n1. Senior Developer at Tesla - Palo Alto, CA\n2. Lead Engineer at Meta - Remote\n3. Principal Architect at Amazon - Seattle, WA\n4. Staff Engineer at Google - Mountain View, CA\n5. Tech Lead at Microsoft - Redmond, WA\n\nAnd 3 more positions...\n\nView all jobs on LinkedIn",
+        "timestamp": "2025-11-24T08:00:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_19",
+        "from": "robert.taylor@customer.com",
+        "subject": "Feature Request: Dark Mode",
+        "body": "Hi Team,\n\nLove your product! Using it daily.\n\nOne feature request: could you add a dark mode option?\n\nMany users including myself prefer dark themes, especially for late-night work sessions.\n\nIt would really improve the user experience.\n\nThanks for considering!\n\nRobert",
+        "timestamp": "2025-11-23T19:45:00",
+        "category": null,
+        "actionItems": []
+    },
+    {
+        "id": "mock_20",
+        "from": "admin@company.com",
+        "subject": "Office Closure - Thanksgiving Holiday",
+        "body": "Team Announcement\n\nPlease note that our office will be closed November 28-29 for Thanksgiving holiday.\n\nEmergency support will be available via the on-call system.\n\nFor urgent matters, contact: emergency@company.com\n\nHave a great holiday!\n\nAdmin Team",
+        "timestamp": "2025-11-22T14:00:00",
+        "category": null,
+        "actionItems": []
+    }
+]
