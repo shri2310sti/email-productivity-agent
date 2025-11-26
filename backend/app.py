@@ -110,32 +110,24 @@ def health_check():
         'mock_mode': gmail is None
     })
 
+# ✅ THE MISSING ROUTE - THIS WAS THE PROBLEM
 @app.route('/api/emails/load-mock', methods=['POST'])
 def load_mock_emails():
     """Load mock email data from JSON file"""
     try:
         print("📧 Loading mock email data from file...")
-
-        # ✅ Always clear existing emails and drafts first
-        db.data['emails'] = []
-        db.data['drafts'] = []
-        db.save_data()
-
-        # Load fresh mock emails
         emails = load_mock_inbox_from_file()
         db.save_emails(emails)
-
-        print(f"✅ Loaded {len(emails)} fresh mock emails")
+        print(f"✅ Loaded {len(emails)} mock emails")
         return jsonify({
-            'success': True,
-            'emails': emails,
+            'success': True, 
+            'emails': emails, 
             'count': len(emails),
-            'message': f'Successfully loaded {len(emails)} fresh mock emails'
+            'message': f'Successfully loaded {len(emails)} mock emails'
         })
     except Exception as e:
         print(f"❌ Error loading mock emails: {str(e)}")
         return jsonify({'success': False, 'error': str(e)}), 500
-
 
 @app.route('/api/emails/fetch', methods=['GET'])
 def fetch_emails():
