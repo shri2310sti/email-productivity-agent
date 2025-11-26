@@ -1,16 +1,34 @@
 import axios from 'axios';
 
-// Detect if running in production or development
-const API_BASE = import.meta.env.PROD
-    ? '/api'
-    : 'http://localhost:5001/api';
+// Auto-detect environment
+const isDevelopment = import.meta.env.DEV;
+
+// Production URL from environment variable, fallback to localhost in dev
+const API_BASE = isDevelopment
+    ? 'http://localhost:5001/api'
+    : (import.meta.env.VITE_API_URL || 'https://email-productivity-agent-z0qd.onrender.com/api');
+
+console.log('🌐 API Base URL:', API_BASE);
 
 const api = axios.create({
     baseURL: API_BASE,
     headers: {
         'Content-Type': 'application/json'
-    }
+    },
+    timeout: 60000  // 60 second timeout for AI processing
 });
+
+// Add response interceptor for better error handling
+api.interceptors.response.use(
+    response => response,
+    error => {
+        console.error('API Error:', error);
+        if (error.code === 'ECONNABORTED') {
+            console.error('Request timeout - backend may be processing');
+        }
+        return Promise.reject(error);
+    }
+);
 
 // NEW: Load mock email data
 export const loadMockEmails = () => {

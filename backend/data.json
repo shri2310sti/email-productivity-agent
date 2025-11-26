@@ -1,6 +1,6 @@
 {
   "prompts": {
-    "categorization": "You are an expert email categorizer. Categorize this email into EXACTLY ONE category.\n\nCATEGORIES AND RULES:\n\n1. **Spam** - Mark as Spam if:\n   - Contains excessive CAPS LOCK or exclamation marks (!!!)\n   - Suspicious sender (randomsite, unknown domains, .xyz domains)\n   - Lottery/prize claims\n   - Obvious scams or phishing attempts\n   - Too-good-to-be-true offers\n\n2. **Important** - Mark as Important if:\n   - Contains words: URGENT, CRITICAL, SECURITY ALERT, BUG, PRODUCTION, VULNERABILITY\n   - Time-sensitive issues requiring immediate attention\n   - Security notifications\n   - Critical system alerts\n   - System maintenance notifications\n   - NO specific action requested from YOU, just awareness needed\n\n3. **To-Do** - Mark as To-Do if:\n   - Contains explicit action requests directed at YOU\n   - Phrases like: 'please review', 'action required', 'signature needed', 'your approval', 'need your feedback'\n   - Meeting requests asking for YOUR availability\n   - Code review requests\n   - Form submissions needed\n   - Contract/document reviews requiring YOUR signature\n   - Payment reminders with due dates\n   - Training completion requirements\n   - ANY task that requires YOU to do something\n\n4. **Newsletter** - Mark as Newsletter if:\n   - From domains containing: digest, newsletter, deals, events, updates, alerts, noreply\n   - Weekly/daily summaries or reports\n   - Marketing content or promotions\n   - Event announcements or registrations\n   - Job alerts or career opportunities\n   - Promotional emails\n   - Workspace summaries (Slack, Teams, etc.)\n   - General announcements without specific action\n\nDECISION LOGIC:\n- If email has BOTH urgency AND action needed → Choose 'To-Do'\n- If email is urgent but NO action needed → Choose 'Important'\n- If email is from a known marketing/digest sender → Choose 'Newsletter'\n- If email looks suspicious or scammy → Choose 'Spam'\n- If completely unsure → Choose 'Important' as safe default\n\nIMPORTANT: Output ONLY the category name. No explanations. Just one word: Important, Newsletter, Spam, or To-Do",
+    "categorization": "You are an expert email categorizer. Categorize this email into EXACTLY ONE category.\n\nCATEGORIES AND RULES:\n\n1. **Spam** - Mark as Spam if:\n   - Contains excessive CAPS LOCK or exclamation marks (!!!)\n   - Suspicious sender (randomsite, unknown domains, .xyz domains)\n   - Lottery/prize claims\n   - Obvious scams or phishing attempts\n   - Too-good-to-be-true offers\n   - Mark any email with more than 3 exclamation marks as Spam\n\n2. **Important** - Mark as Important if:\n   - Contains words: URGENT, CRITICAL, SECURITY ALERT, BUG, PRODUCTION, VULNERABILITY\n   - Time-sensitive issues requiring immediate attention\n   - Security notifications\n   - Critical system alerts\n   - System maintenance notifications\n   - NO specific action requested from YOU, just awareness needed\n\n3. **To-Do** - Mark as To-Do if:\n   - Contains explicit action requests directed at YOU\n   - Phrases like: 'please review', 'action required', 'signature needed', 'your approval', 'need your feedback'\n   - Meeting requests asking for YOUR availability\n   - Code review requests\n   - Form submissions needed\n   - Contract/document reviews requiring YOUR signature\n   - Payment reminders with due dates\n   - Training completion requirements\n   - ANY task that requires YOU to do something\n\n4. **Newsletter** - Mark as Newsletter if:\n   - From domains containing: digest, newsletter, deals, events, updates, alerts, noreply\n   - Weekly/daily summaries or reports\n   - Marketing content or promotions\n   - Event announcements or registrations\n   - Job alerts or career opportunities\n   - Promotional emails\n   - Workspace summaries (Slack, Teams, etc.)\n   - General announcements without specific action\n\nDECISION LOGIC:\n- If email has BOTH urgency AND action needed → Choose 'To-Do'\n- If email is urgent but NO action needed → Choose 'Important'\n- If email is from a known marketing/digest sender → Choose 'Newsletter'\n- If email looks suspicious or scammy → Choose 'Spam'\n- If completely unsure → Choose 'Important' as safe default\n\nIMPORTANT: Output ONLY the category name. No explanations. Just one word: Important, Newsletter, Spam, or To-Do",
     "actionItem": "Extract all actionable tasks from this email. Identify specific actions the recipient needs to take.\n\nFocus on:\n- Explicit requests ('please review', 'need you to', 'action required')\n- Deadlines and due dates\n- Specific deliverables\n- Meetings requiring response\n- Documents requiring signature\n- Decisions requiring approval\n\nFor each task found, extract:\n1. The specific action/task description (be concise)\n2. Any mentioned deadline or due date\n\nRespond ONLY with valid JSON in this exact format:\n{\n  \"tasks\": [\n    {\n      \"task\": \"Complete the Q4 report review\",\n      \"deadline\": \"November 29, 2025\"\n    },\n    {\n      \"task\": \"Provide sales figures for presentation\",\n      \"deadline\": \"EOD Wednesday\"\n    }\n  ]\n}\n\nIf NO tasks are found, return: {\"tasks\": []}\n\nIMPORTANT: \n- Return ONLY the JSON, no markdown formatting, no explanations, no preamble\n- Tasks must be actionable items for the recipient\n- Don't include general statements or information\n- Be specific and concise",
     "autoReply": "Generate a professional email reply based on the email content and type.\n\nGuidelines by Type:\n\n**For Meeting Requests:**\n- Acknowledge the meeting request\n- Express interest in attending\n- Ask for meeting agenda or more details about topics to be covered\n- Suggest confirming the time once you check your calendar\n\n**For Task/Review Requests:**\n- Acknowledge receipt of the request\n- Provide a realistic timeline for completion\n- Ask clarifying questions if needed\n- Confirm understanding of requirements\n\n**For General Inquiries:**\n- Provide helpful information or next steps\n- Offer to schedule a call if needed\n- Be professional but friendly\n\n**For Urgent Issues:**\n- Show urgency and commitment to resolving quickly\n- Provide immediate next steps\n- Set expectations for resolution time\n\n**General Rules:**\n- Maintain a professional, friendly tone\n- Keep responses concise (2-4 short paragraphs)\n- Include appropriate greeting (Hi/Hello [Name])\n- Include appropriate closing (Best regards, Thank you, etc.)\n- Be helpful and constructive\n- Don't make promises you can't keep\n\nGenerate ONLY the email body (no subject line, no recipient line). Start directly with the greeting.",
     "chat": "You are an intelligent email assistant helping users manage their inbox efficiently.\n\nYour capabilities:\n- Summarize emails clearly and concisely (2-3 sentences max for summaries)\n- Identify action items and deadlines accurately\n- Suggest appropriate responses based on email context\n- Categorize and prioritize emails\n- Answer questions about email content\n- Provide context and recommendations\n- Draft replies when requested\n\nYour personality:\n- Professional but friendly\n- Concise and direct\n- Helpful and proactive\n- Clear and accurate\n\nWhen responding:\n- For 'summarize' requests: Keep to 2-3 sentences maximum\n- For 'action items': List them in bullet points with deadlines\n- For 'draft reply': Generate a full professional email body\n- For other questions: Be helpful, accurate, and concise\n\nAlways consider the email context and user's intent when responding."
@@ -12,8 +12,21 @@
       "subject": "Q4 Project Deadline - Action Required",
       "body": "Hi Team,\n\nWe need to finalize the Q4 report by Friday, November 29th. Please review the attached document and send me your feedback by EOD Wednesday.\n\nAlso, can you provide the latest sales figures for the presentation?\n\nThanks,\nJohn",
       "timestamp": "2025-11-25T10:30:00",
-      "category": null,
-      "actionItems": []
+      "category": "Important",
+      "actionItems": [
+        {
+          "task": "Finalize the Q4 report",
+          "deadline": "Friday, November 29th"
+        },
+        {
+          "task": "Review the attached document and send feedback",
+          "deadline": "EOD Wednesday"
+        },
+        {
+          "task": "Provide the latest sales figures for the presentation",
+          "deadline": ""
+        }
+      ]
     },
     {
       "id": "mock_2",
@@ -21,7 +34,7 @@
       "subject": "Weekly Tech Digest - AI Trends & Updates",
       "body": "Welcome to this week's Tech Digest!\n\nCheck out the latest AI developments, new framework releases, and trending open-source projects.\n\nThis week:\n- GPT-5 rumors\n- Rust adoption grows\n- Quantum computing breakthroughs\n\nRead more at techdigest.com",
       "timestamp": "2025-11-25T09:15:00",
-      "category": null,
+      "category": "Newsletter",
       "actionItems": []
     },
     {
@@ -30,7 +43,7 @@
       "subject": "YOU WON $1,000,000!!! CLAIM NOW!!!",
       "body": "Congratulations! You have been selected as our lucky winner!\n\nClick here to claim your prize now! Limited time offer! Act fast!\n\nThis is not a scam! 100% real! Send us your bank details!\n\nWinners Team",
       "timestamp": "2025-11-25T08:45:00",
-      "category": null,
+      "category": "Spam",
       "actionItems": []
     },
     {
@@ -39,8 +52,13 @@
       "subject": "Meeting Request: Strategy Discussion",
       "body": "Hi,\n\nI would like to schedule a meeting next week to discuss our Q1 2026 strategy.\n\nAre you available Tuesday or Wednesday afternoon? Please let me know your availability and preferred time.\n\nBest regards,\nSarah",
       "timestamp": "2025-11-25T11:20:00",
-      "category": null,
-      "actionItems": []
+      "category": "Important",
+      "actionItems": [
+        {
+          "task": "Let Sarah know your availability and preferred time for a meeting next week (Tuesday or Wednesday afternoon).",
+          "deadline": "next week"
+        }
+      ]
     },
     {
       "id": "mock_5",
@@ -48,8 +66,13 @@
       "subject": "Code Review Request - PR #234",
       "body": "Hey,\n\nI just pushed PR #234 with the new authentication module. Could you review it when you get a chance?\n\nIt needs to be merged before the sprint ends on Friday.\n\nThanks!\nMichael",
       "timestamp": "2025-11-25T14:00:00",
-      "category": null,
-      "actionItems": []
+      "category": "To-Do",
+      "actionItems": [
+        {
+          "task": "Review PR #234 (new authentication module)",
+          "deadline": "Friday"
+        }
+      ]
     },
     {
       "id": "mock_6",
@@ -57,8 +80,13 @@
       "subject": "Action Required: Complete Annual Training",
       "body": "Dear Employee,\n\nThis is a reminder to complete your mandatory annual compliance training by November 30th.\n\nThe course takes approximately 2 hours to complete. Failure to complete may result in access restrictions.\n\nPlease log in to the training portal and complete all modules.\n\nHR Department",
       "timestamp": "2025-11-24T16:30:00",
-      "category": null,
-      "actionItems": []
+      "category": "To-Do",
+      "actionItems": [
+        {
+          "task": "Complete mandatory annual compliance training",
+          "deadline": "November 30th"
+        }
+      ]
     },
     {
       "id": "mock_7",
@@ -66,7 +94,7 @@
       "subject": "Black Friday Deals - 70% OFF Everything!",
       "body": "Don't miss our biggest sale of the year!\n\nUp to 70% off on:\n- Electronics\n- Clothing\n- Home goods\n- And more!\n\nFree shipping on orders over $50. Sale ends midnight Sunday!\n\nShop now at shopping.com",
       "timestamp": "2025-11-24T12:00:00",
-      "category": null,
+      "category": "Newsletter",
       "actionItems": []
     },
     {
@@ -75,7 +103,7 @@
       "subject": "Urgent: Bug in Production",
       "body": "URGENT\n\nWe're experiencing a critical bug in production affecting user logins.\n\nCan you investigate ASAP? Users are reporting '500 Internal Server Error' when trying to authenticate.\n\nThis is affecting approximately 1000 users.\n\nPlease respond immediately.\n\nDavid",
       "timestamp": "2025-11-25T15:45:00",
-      "category": null,
+      "category": "Uncategorized",
       "actionItems": []
     },
     {
@@ -84,7 +112,7 @@
       "subject": "DevCon 2026 - Early Bird Registration",
       "body": "DevCon 2026 is coming to San Francisco next March!\n\nEarly bird tickets are now available at 40% off.\n\nJoin 5000+ developers for:\n- 3 days of workshops\n- Industry expert talks\n- Networking opportunities\n- Hands-on labs\n\nRegister now at devcon2026.com",
       "timestamp": "2025-11-24T10:00:00",
-      "category": null,
+      "category": "Uncategorized",
       "actionItems": []
     },
     {
@@ -93,8 +121,13 @@
       "subject": "Partnership Proposal Discussion",
       "body": "Hi,\n\nI hope this email finds you well.\n\nWe'd like to explore a potential partnership between our companies. We believe there's great synergy in our technologies.\n\nWould you be available for a call next week to discuss this opportunity?\n\nLooking forward to hearing from you.\n\nBest,\nEmily",
       "timestamp": "2025-11-24T14:30:00",
-      "category": null,
-      "actionItems": []
+      "category": "Important",
+      "actionItems": [
+        {
+          "task": "Check availability for a call to discuss partnership opportunity",
+          "deadline": "next week"
+        }
+      ]
     },
     {
       "id": "mock_11",
@@ -102,8 +135,13 @@
       "subject": "[GitHub] Security Alert: New vulnerability detected",
       "body": "Security Alert\n\nA new security vulnerability has been detected in your repository 'email-agent'.\n\nDependency: lodash@4.17.20\nSeverity: High\nRecommended Action: Update to lodash@4.17.21 or higher\n\nView details on GitHub",
       "timestamp": "2025-11-25T07:00:00",
-      "category": null,
-      "actionItems": []
+      "category": "Important",
+      "actionItems": [
+        {
+          "task": "Update lodash to version 4.17.21 or higher in the 'email-agent' repository.",
+          "deadline": ""
+        }
+      ]
     },
     {
       "id": "mock_12",
@@ -111,8 +149,13 @@
       "subject": "Invoice #INV-2025-1142 - Payment Due",
       "body": "Dear Sir/Madam,\n\nThis is a friendly reminder that Invoice #INV-2025-1142 for $2,450 is due on November 28th.\n\nPlease process payment at your earliest convenience to avoid late fees.\n\nPayment details:\n- Amount: $2,450.00\n- Due Date: November 28, 2025\n- Invoice ID: INV-2025-1142\n\nThank you,\nAccounts Receivable",
       "timestamp": "2025-11-23T11:00:00",
-      "category": null,
-      "actionItems": []
+      "category": "Important",
+      "actionItems": [
+        {
+          "task": "Process payment for Invoice #INV-2025-1142",
+          "deadline": "2025-11-28"
+        }
+      ]
     },
     {
       "id": "mock_13",
@@ -120,7 +163,7 @@
       "subject": "Your Slack Workspace Weekly Summary",
       "body": "Here's what happened in your workspace this week:\n\n- 234 messages sent\n- 12 new channels created\n- 45 files shared\n- Most active channel: #engineering\n- Most active day: Wednesday\n\nKeep the collaboration going!\n\nSlack Team",
       "timestamp": "2025-11-24T09:00:00",
-      "category": null,
+      "category": "Newsletter",
       "actionItems": []
     },
     {
@@ -129,8 +172,13 @@
       "subject": "Contract Renewal - Signature Required",
       "body": "Hello,\n\nYour annual software license agreement expires on December 15th.\n\nPlease review the attached renewal contract and return the signed copy by December 1st to ensure uninterrupted service.\n\nKey changes:\n- Updated pricing (5% increase)\n- New support tiers available\n- Extended warranty options\n\nLet me know if you have questions.\n\nAlex",
       "timestamp": "2025-11-23T13:20:00",
-      "category": null,
-      "actionItems": []
+      "category": "Important",
+      "actionItems": [
+        {
+          "task": "Review the attached renewal contract and return the signed copy",
+          "deadline": "December 1st"
+        }
+      ]
     },
     {
       "id": "mock_15",
@@ -138,7 +186,7 @@
       "subject": "Scheduled Maintenance Notification",
       "body": "Maintenance Notification\n\nWe will be performing scheduled maintenance on Saturday, November 30th from 2:00 AM to 6:00 AM EST.\n\nServices may be unavailable during this time:\n- Web Dashboard\n- API Services\n- Mobile Apps\n\nWe apologize for any inconvenience.\n\nSupport Team",
       "timestamp": "2025-11-22T16:00:00",
-      "category": null,
+      "category": "Important",
       "actionItems": []
     },
     {
@@ -147,8 +195,13 @@
       "subject": "Senior Software Engineer Position",
       "body": "Hi,\n\nI came across your profile and think you'd be a great fit for a Senior Software Engineer role at our company.\n\nThe position offers:\n- Competitive salary ($150k-$200k)\n- Remote work options\n- Excellent benefits\n- Stock options\n- Work on cutting-edge technology\n\nAre you open to discussing opportunities?\n\nBest regards,\nTech Recruiter",
       "timestamp": "2025-11-22T10:30:00",
-      "category": null,
-      "actionItems": []
+      "category": "Important",
+      "actionItems": [
+        {
+          "task": "Respond to the recruiter regarding openness to discuss opportunities",
+          "deadline": null
+        }
+      ]
     },
     {
       "id": "mock_17",
@@ -156,8 +209,17 @@
       "subject": "NDA Review Required",
       "body": "Hello,\n\nPlease review the attached Non-Disclosure Agreement for the upcoming client project.\n\nWe need your approval and signature by November 27th before we can proceed with the engagement.\n\nThe NDA covers:\n- Confidential information protection\n- Term: 2 years\n- Standard non-compete clause\n\nPlease let me know if you have any concerns.\n\nMaria Santos\nLegal Department",
       "timestamp": "2025-11-23T15:00:00",
-      "category": null,
-      "actionItems": []
+      "category": "Important",
+      "actionItems": [
+        {
+          "task": "Review the attached Non-Disclosure Agreement",
+          "deadline": "November 27th"
+        },
+        {
+          "task": "Approve and sign the NDA",
+          "deadline": "November 27th"
+        }
+      ]
     },
     {
       "id": "mock_18",
@@ -165,7 +227,7 @@
       "subject": "Your weekly LinkedIn job alerts",
       "body": "Based on your profile and preferences, here are new job opportunities:\n\n1. Senior Developer at Tesla - Palo Alto, CA\n2. Lead Engineer at Meta - Remote\n3. Principal Architect at Amazon - Seattle, WA\n4. Staff Engineer at Google - Mountain View, CA\n5. Tech Lead at Microsoft - Redmond, WA\n\nAnd 3 more positions...\n\nView all jobs on LinkedIn",
       "timestamp": "2025-11-24T08:00:00",
-      "category": null,
+      "category": "Newsletter",
       "actionItems": []
     },
     {
@@ -174,8 +236,13 @@
       "subject": "Feature Request: Dark Mode",
       "body": "Hi Team,\n\nLove your product! Using it daily.\n\nOne feature request: could you add a dark mode option?\n\nMany users including myself prefer dark themes, especially for late-night work sessions.\n\nIt would really improve the user experience.\n\nThanks for considering!\n\nRobert",
       "timestamp": "2025-11-23T19:45:00",
-      "category": null,
-      "actionItems": []
+      "category": "To-Do",
+      "actionItems": [
+        {
+          "task": "Add a dark mode option to the product",
+          "deadline": null
+        }
+      ]
     },
     {
       "id": "mock_20",
@@ -183,9 +250,19 @@
       "subject": "Office Closure - Thanksgiving Holiday",
       "body": "Team Announcement\n\nPlease note that our office will be closed November 28-29 for Thanksgiving holiday.\n\nEmergency support will be available via the on-call system.\n\nFor urgent matters, contact: emergency@company.com\n\nHave a great holiday!\n\nAdmin Team",
       "timestamp": "2025-11-22T14:00:00",
-      "category": null,
+      "category": "Important",
       "actionItems": []
     }
   ],
-  "drafts": []
+  "drafts": [
+    {
+      "to": "john.smith@techcorp.com",
+      "subject": "Re: Q4 Project Deadline - Action Required",
+      "body": "Subject: Re: Q4 Project Deadline - Action Required\n\nHi John,\n\nThanks for the update and the attached document. I'll review the Q4 report thoroughly and ensure my feedback is sent to you by EOD Wednesday, November 27th, as requested.\n\nI will also gather the latest sales figures for the presentation and send those over to you shortly. Please let me know if there's a specific format you prefer for the figures.\n\nBest,\n\n[Your Name]",
+      "originalEmailId": "mock_1",
+      "id": "1764125062864927",
+      "createdAt": "2025-11-26T08:14:22.864954",
+      "status": "draft"
+    }
+  ]
 }

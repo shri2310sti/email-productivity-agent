@@ -179,8 +179,8 @@ function App() {
             <div className="flex items-center space-x-3">
               <Mail className="w-8 h-8 text-indigo-600" />
               <div>
-                <h1 className="text-3xl font-bold text-gray-800">Email Productivity Agent</h1>
-                <p className="text-sm text-gray-500">Prompt-Driven AI Email Assistant</p>
+                <h1 className="text-3xl font-bold text-black-800">Email Productivity Agent</h1>
+                <p className="text-sm text-black-500">Prompt-Driven AI Email Assistant</p>
               </div>
             </div>
             <div className="flex items-center space-x-2 flex-wrap gap-2">
@@ -234,13 +234,13 @@ function App() {
                 onClick={() => setActiveTab(tab.key)}
                 className={`flex-1 px-6 py-4 text-center font-medium whitespace-nowrap flex items-center justify-center gap-2 ${activeTab === tab.key
                   ? 'border-b-2 border-indigo-600 text-indigo-600'
-                  : 'text-gray-600 hover:text-indigo-600'
+                  : 'text-black-600 hover:text-indigo-600'
                   }`}
               >
                 <tab.icon className="w-5 h-5" />
                 <span className="capitalize">{tab.label}</span>
                 {tab.count !== undefined && (
-                  <span className="ml-1 px-2 py-0.5 bg-gray-200 text-gray-700 text-xs rounded-full">
+                  <span className="ml-1 px-2 py-0.5 bg-black-200 text-black-700 text-xs rounded-full">
                     {tab.count}
                   </span>
                 )}
@@ -256,9 +256,9 @@ function App() {
               <h2 className="text-xl font-bold mb-4 text-black">Inbox ({emails.length})</h2>
               {emails.length === 0 ? (
                 <div className="text-center py-12">
-                  <Inbox className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                  <p className="text-gray-500 mb-2">No emails loaded</p>
-                  <p className="text-sm text-gray-400">Click "Load Mock Inbox" to get started</p>
+                  <Inbox className="w-16 h-16 text-black-300 mx-auto mb-4" />
+                  <p className="text-black-500 mb-2">No emails loaded</p>
+                  <p className="text-sm text-black-400">Click "Load Mock Inbox" to get started</p>
                 </div>
               ) : (
                 emails.map(email => (
@@ -284,7 +284,7 @@ function App() {
                               : email.category.toLowerCase().includes('newsletter')
                                 ? 'bg-blue-100 text-blue-800'
                                 : email.category.toLowerCase().includes('spam')
-                                  ? 'bg-gray-100 text-gray-800'
+                                  ? 'bg-black-100 text-black-800'
                                   : 'bg-purple-100 text-purple-800'
                             }`}
                         >
@@ -292,8 +292,8 @@ function App() {
                         </span>
                       )}
                     </div>
-                    <div className="text-sm font-medium text-gray-800 mb-1 truncate">{email.subject}</div>
-                    <div className="text-xs text-gray-500">{new Date(email.timestamp).toLocaleString()}</div>
+                    <div className="text-sm font-medium text-black-800 mb-1 truncate">{email.subject}</div>
+                    <div className="text-xs text-black-500">{new Date(email.timestamp).toLocaleString()}</div>
                   </div>
                 ))
               )}
@@ -304,13 +304,13 @@ function App() {
                 <>
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">{selectedEmail.subject}</h3>
-                    <div className="text-sm text-gray-600 mb-4 flex items-center justify-between">
+                    <div className="text-sm text-black-600 mb-4 flex items-center justify-between">
                       <span>
                         From: <strong>{selectedEmail.from}</strong>
                       </span>
                       <span className="text-xs">{new Date(selectedEmail.timestamp).toLocaleString()}</span>
                     </div>
-                    <div className="bg-gray-50 p-4 rounded-lg mb-4 max-h-96 overflow-y-auto">
+                    <div className="bg-black-50 p-4 rounded-lg mb-4 max-h-96 overflow-y-auto">
                       <p className="text-black whitespace-pre-wrap">{selectedEmail.body}</p>
                     </div>
                     {selectedEmail.actionItems && selectedEmail.actionItems.length > 0 && (
@@ -337,7 +337,7 @@ function App() {
                   </button>
                 </>
               ) : (
-                <div className="flex flex-col items-center justify-center h-full text-gray-400">
+                <div className="flex flex-col items-center justify-center h-full text-black-400">
                   <MessageSquare className="w-16 h-16 mb-4" />
                   <p>Select an email to view details</p>
                 </div>
@@ -358,9 +358,9 @@ function App() {
                   </p>
                   <p className="text-xs text-indigo-600 mt-1">From: {selectedEmail.from}</p>
                 </div>
-                <div className="h-96 overflow-y-auto mb-4 space-y-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="h-96 overflow-y-auto mb-4 space-y-4 p-4 bg-black-50 rounded-lg border border-black-200">
                   {chatMessages.length === 0 ? (
-                    <div className="text-center text-gray-400 py-12">
+                    <div className="text-center text-black-400 py-12">
                       <MessageSquare className="w-12 h-12 mx-auto mb-2 opacity-50" />
                       <p>Start a conversation about this email...</p>
                       <p className="text-xs mt-2">Try: "Summarize this email" or "What actions do I need to take?"</p>
@@ -371,7 +371,7 @@ function App() {
                         <div
                           className={`max-w-2xl p-4 rounded-lg ${msg.role === 'user'
                             ? 'bg-indigo-600 text-white'
-                            : 'bg-white text-gray-800 border border-gray-200 shadow-sm'
+                            : 'bg-white text-black-800 border border-black-200 shadow-sm'
                             }`}
                         >
                           {msg.content}
@@ -387,7 +387,7 @@ function App() {
                     onChange={e => setChatInput(e.target.value)}
                     onKeyPress={e => e.key === 'Enter' && !e.shiftKey && handleChatSubmit()}
                     placeholder="Ask about this email... (e.g., 'What should I do about this?')"
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
+                    className="flex-1 px-4 py-2 border border-black-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
                   />
                   <button
                     onClick={handleChatSubmit}
@@ -399,7 +399,7 @@ function App() {
                 </div>
               </>
             ) : (
-              <div className="flex flex-col items-center justify-center h-96 text-gray-400">
+              <div className="flex flex-col items-center justify-center h-96 text-black-400">
                 <MessageSquare className="w-16 h-16 mb-4" />
                 <p>Select an email from the inbox to start chatting</p>
               </div>
@@ -414,10 +414,10 @@ function App() {
             {drafts.length > 0 ? (
               <div className="space-y-4">
                 {drafts.map(draft => (
-                  <div key={draft.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                  <div key={draft.id} className="border border-black-200 rounded-lg p-4 hover:shadow-md transition">
                     <div className="flex justify-between items-start mb-3">
                       <div className="flex-1">
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-black-600">
                           To: <strong>{draft.to}</strong>
                         </div>
                         <div className="font-semibold text-lg">{draft.subject}</div>
@@ -432,10 +432,10 @@ function App() {
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
-                    <div className="bg-gray-50 p-3 rounded max-h-48 overflow-y-auto border border-gray-200">
+                    <div className="bg-black-50 p-3 rounded max-h-48 overflow-y-auto border border-black-200">
                       <p className="text-sm whitespace-pre-wrap">{draft.body}</p>
                     </div>
-                    <div className="text-xs text-gray-500 mt-2 flex justify-between items-center">
+                    <div className="text-xs text-black-500 mt-2 flex justify-between items-center">
                       <span>Created: {new Date(draft.createdAt).toLocaleString()}</span>
                       <span className="text-green-600">✓ Saved as draft (not sent)</span>
                     </div>
@@ -443,7 +443,7 @@ function App() {
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center h-64 text-gray-400">
+              <div className="flex flex-col items-center justify-center h-64 text-black-400">
                 <Edit className="w-16 h-16 mb-4" />
                 <p>No drafts yet</p>
                 <p className="text-sm mt-2">Generate a draft from an email in your inbox</p>
@@ -457,7 +457,7 @@ function App() {
           <div className="bg-white rounded-lg shadow-lg p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">⚙️ Prompt Configuration (Agent Brain)</h2>
-              <span className="text-sm text-gray-500">Edit prompts to change AI behavior</span>
+              <span className="text-sm text-black-500">Edit prompts to change AI behavior</span>
             </div>
             <div className="mb-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
               <p className="text-sm text-blue-800">
@@ -468,7 +468,7 @@ function App() {
             </div>
             <div className="space-y-6">
               {Object.entries(prompts).map(([key, value]) => (
-                <div key={key} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                <div key={key} className="border border-black-200 rounded-lg p-4 hover:shadow-md transition">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="font-semibold capitalize text-lg">
                       {key.replace(/([A-Z])/g, ' $1').trim()} Prompt
@@ -495,11 +495,11 @@ function App() {
                     <textarea
                       value={value}
                       onChange={e => setPrompts({ ...prompts, [key]: e.target.value })}
-                      className="w-full h-32 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 font-mono text-sm"
+                      className="w-full h-32 px-3 py-2 border border-black-300 rounded-lg focus:ring-2 focus:ring-indigo-600 font-mono text-sm"
                     />
                   ) : (
-                    <div className="bg-gray-50 p-3 rounded border border-gray-200">
-                      <p className="text-sm text-gray-700 whitespace-pre-wrap">{value}</p>
+                    <div className="bg-black-50 p-3 rounded border border-black-200">
+                      <p className="text-sm text-black-700 whitespace-pre-wrap">{value}</p>
                     </div>
                   )}
                 </div>
