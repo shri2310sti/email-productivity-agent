@@ -1,4 +1,6 @@
-# Logs
+# -------------------------
+# LOG FILES
+# -------------------------
 logs
 *.log
 npm-debug.log*
@@ -7,18 +9,47 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# -------------------------
+# FRONTEND (React/Vite)
+# -------------------------
+node_modules/
+dist/
+dist-ssr/
 *.local
 
-# Editor directories and files
+# Vite
+.vite/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# -------------------------
+# PYTHON BACKEND (Flask)
+# -------------------------
+venv/
+__pycache__/
+*.pyc
+instance/
+token.pickle
+token.pkl
+
+# Environment files
+.env
+
+# -------------------------
+# OS / EDITOR FILES
+# -------------------------
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# -------------------------
+# ARCHIVES
+# -------------------------
+*.zip
