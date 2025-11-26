@@ -13,7 +13,15 @@ print("🚀 Starting Email Productivity Agent Backend")
 print("=" * 50)
 
 app = Flask(__name__)
-CORS(app)
+
+CORS(app, resources={
+    r"/*": {
+        "origins": "*",
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type"],
+    }
+})
+
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key-12345')
 
 # Import services
@@ -102,24 +110,32 @@ def health_check():
         'mock_mode': gmail is None
     })
 
-# ✅ THE MISSING ROUTE - THIS WAS THE PROBLEM
 @app.route('/api/emails/load-mock', methods=['POST'])
 def load_mock_emails():
     """Load mock email data from JSON file"""
     try:
         print("📧 Loading mock email data from file...")
+
+        # ✅ Always clear existing emails and drafts first
+        db.data['emails'] = []
+        db.data['drafts'] = []
+        db.save_data()
+
+        # Load fresh mock emails
         emails = load_mock_inbox_from_file()
         db.save_emails(emails)
-        print(f"✅ Loaded {len(emails)} mock emails")
+
+        print(f"✅ Loaded {len(emails)} fresh mock emails")
         return jsonify({
-            'success': True, 
-            'emails': emails, 
+            'success': True,
+            'emails': emails,
             'count': len(emails),
-            'message': f'Successfully loaded {len(emails)} mock emails'
+            'message': f'Successfully loaded {len(emails)} fresh mock emails'
         })
     except Exception as e:
         print(f"❌ Error loading mock emails: {str(e)}")
         return jsonify({'success': False, 'error': str(e)}), 500
+
 
 @app.route('/api/emails/fetch', methods=['GET'])
 def fetch_emails():
@@ -370,18 +386,6 @@ def reset_prompts():
         })
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
-
-
-@app.route('/healthz', methods=['GET'])
-@app.route('/health', methods=['GET'])
-def health_check_render():
-    """Health check for Render"""
-    return jsonify({
-        'status': 'healthy',
-        'service': 'Email Productivity Agent',
-        'version': '1.0.0'
-    }), 200
-    
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5001))
     print("=" * 50)
