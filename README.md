@@ -13,24 +13,6 @@ Link :- https://email-productivity-frontend.onrender.com/
 
 ***
 
-## 🎯 Assignment Alignment
-
-This project is an implementation of the **“Assignment: Development of a Prompt-Driven Email Productivity Agent”** and fulfills all specified requirements:
-
-- **Objective**:  
-  - Ingest emails (mock or Gmail).  
-  - Categorize emails using prompts.  
-  - Extract action items and deadlines.  
-  - Auto-draft replies.  
-  - Provide a chat-based Email Agent interface for summaries, tasks, and replies.  
-- **UI Requirement**:  
-  - Web-based UI built with **React + Vite + TailwindCSS** (web-based equivalent to Streamlit).  
-  - Backend implemented with **Flask (Python)**.  
-- **Prompt-Driven Architecture**:  
-  - All LLM outputs (categorization, action-item extraction, auto-reply, chat) use **stored, user-editable prompts** loaded from JSON and configurable via a dedicated **Prompts** tab.
-
-***
-
 ## 🧱 Tech Stack
 
 ### Backend
@@ -428,23 +410,6 @@ Each draft includes:
   - LLM/API errors handled gracefully with appropriate UI feedback.  
   - Application always defaults to **drafting**, never sending.  
   - Optional Gmail integration; mock inbox is always available.
-
-***
-
-## 🎓 Assignment Submission Checklist
-
-- ✅ **Source Code**: Full repository with backend (Flask) and frontend (React).  
-- ✅ **README.md**: Includes setup, run instructions, mock inbox loading, prompt configuration, and usage examples.  
-- ✅ **Mock Inbox**: 20 sample emails (`mock_inbox.json`).  
-- ✅ **Default Prompts**: Stored in `default_prompts.json`.  
-- ✅ **Demo Video (5–10 min)**: Shows:
-  - Loading inbox  
-  - Editing/creating custom prompts  
-  - Email ingestion + automatic categorization & action extraction  
-  - Using Email Agent chat to summarize, get tasks, and generate replies  
-- ✅ **Functional Requirements**: Phases 1–3 fully implemented.  
-- ✅ **Prompt-Driven Architecture**: All LLM behavior controlled by stored prompts.  
-- ✅ **UX & Safety**: Intuitive UI, error handling, and “draft-only” safeguards.
 
 ***
 
