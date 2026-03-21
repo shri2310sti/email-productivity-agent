@@ -170,5 +170,5 @@ Frontend runs on: http://localhost:5173
 
 ## ❤️ Built By
 **Shristi Shrivastava**  
-GitHub: https://github.com/shri2310st  
+GitHub: https://github.com/shri2310sti  
 LinkedIn: https://www.linkedin.com/in/shristishrivastava1
